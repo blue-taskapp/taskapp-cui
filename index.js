@@ -66,7 +66,10 @@ function TaskApp() {
     });
   }
   this.startTimer = function () {
-    this.timerID = setInterval(this.checkPlan, 1000 * 60 * 60);
+    const that = this;
+    this.timerID = setInterval(() => {
+      that.checkPlan()
+    }, 1000 * 60 * 60);
   }
 }
 
